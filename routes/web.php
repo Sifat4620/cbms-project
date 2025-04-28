@@ -26,6 +26,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 
 
+Route::get('/test/env', function () {
+    dd(env('DB_DATABASE')); // Dump 'db' variable value one by one
+});
+
 Route::redirect('/', 'login');
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
